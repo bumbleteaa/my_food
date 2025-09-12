@@ -12,7 +12,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('description');
-            $table->string('images');
+            $table->string('image');
             $table->integer('price');
             $table->string('price_afterdiscount')->nullable();
             $table->string('percent')->nullable();
@@ -22,9 +22,7 @@ return new class extends Migration
         });
     }
 
-    /**
-     * Reverse the migrations.
-     */
+
     public function down(): void
     {
         Schema::dropIfExists('foods');

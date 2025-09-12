@@ -8,7 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Foods extends Model
 {
     use HasFactory;
-    protected $fillable = ['name', 
+    protected $fillable = [
+    'name', 
     'description', 
     'image', 
     'price', 
@@ -16,7 +17,7 @@ class Foods extends Model
     'is_promo', 
     'categories_id'];
 
-    public function categories(){
-        return $this->belongsTo(Category::class);
+    public function category(){
+        return $this->belongsTo(Category::class, 'categories_id');
     }
 }

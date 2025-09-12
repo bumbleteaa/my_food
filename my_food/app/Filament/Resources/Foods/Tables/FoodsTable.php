@@ -6,6 +6,7 @@ use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
 use Filament\Tables\Columns\TextColumn;
+use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Table;
 
 class FoodsTable
@@ -14,14 +15,29 @@ class FoodsTable
     {
         return $table
             ->columns([
+                TextColumn::make('name')
+                ->searchable(),
+                ImageColumn::make('image'),
+                TextColumn::make('price')
+                ->money('IDR')
+                ->sortable(),
+                TextColumn::make('price_afterdiscount')
+                ->money('IDR')
+                ->sortable(),
+                TextColumn::make('percent')
+                ->sortable(),
+                TextColumn::make('is_promo')
+                ->sortable(),
+                TextColumn::make('categories.name')
+                ->searchable(),  
                 TextColumn::make('created_at')
-                    ->dateTime()
-                    ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
+                ->dateTime()
+                ->sortable()
+                ->toggleable(isToggledHiddenByDefault:true),
                 TextColumn::make('updated_at')
-                    ->dateTime()
-                    ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
+                ->dateTime()
+                ->sortable()
+                ->toggleable(isToggledHiddenByDefault:true),
             ])
             ->filters([
                 //

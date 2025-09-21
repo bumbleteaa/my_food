@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('phone');
             $table->string('external_id');
             $table->string('checkout_link');
-            $table->integer('barcode_id')->constrained('barcodes')->cascadeOnDelete();
+            $table->integer('barcodes_id')->constrained('barcodes')->cascadeOnDelete();
             $table->string('payment_method')->nullable();
             $table->string('payment_status')->nullable();
             $table->integer('subtotal');

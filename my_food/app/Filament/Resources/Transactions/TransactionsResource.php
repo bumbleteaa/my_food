@@ -7,7 +7,7 @@ use App\Filament\Resources\Transactions\Pages\EditTransactions;
 use App\Filament\Resources\Transactions\Pages\ListTransactions;
 use App\Filament\Resources\Transactions\Schemas\TransactionsForm;
 use App\Filament\Resources\Transactions\Tables\TransactionsTable;
-use App\Models\Transactions;
+use App\Models\Transaction;
 use BackedEnum;
 use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
@@ -16,9 +16,9 @@ use Filament\Tables\Table;
 
 class TransactionsResource extends Resource
 {
-    protected static ?string $model = Transactions::class;
+    protected static ?string $model = Transaction::class;
 
-    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
+    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedCurrencyDollar;
 
     protected static ?string $recordTitleAttribute = 'Transactions';
 
@@ -43,7 +43,6 @@ class TransactionsResource extends Resource
     {
         return [
             'index' => ListTransactions::route('/'),
-            'create' => CreateTransactions::route('/create'),
             'edit' => EditTransactions::route('/{record}/edit'),
         ];
     }

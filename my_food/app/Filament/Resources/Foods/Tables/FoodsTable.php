@@ -7,6 +7,7 @@ use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Columns\ImageColumn;
+use Filament\Tables\Columns\IconColumn;
 use Filament\Tables\Table;
 
 class FoodsTable
@@ -26,9 +27,10 @@ class FoodsTable
                 ->sortable(),
                 TextColumn::make('percent')
                 ->sortable(),
-                TextColumn::make('is_promo')
+                IconColumn::make('is_promo')
+                ->boolean()
                 ->sortable(),
-                TextColumn::make('categories.name')
+                TextColumn::make('category.name')
                 ->searchable(),  
                 TextColumn::make('created_at')
                 ->dateTime()

@@ -27,9 +27,9 @@ class Transaction extends Model
     ];
 
     protected $casts = [
-        'subtotal' => 'interger',
-        'ppn' => 'interger',
-        'total' => 'interger'
+        'subtotal' => 'decimal:2',
+        'ppn' => 'decimal:2',
+        'total' => 'decimal:2'
     ];
 
     public function barcode(): BelongsTo

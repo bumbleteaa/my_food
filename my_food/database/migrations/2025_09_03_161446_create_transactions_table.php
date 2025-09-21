@@ -16,14 +16,14 @@ return new class extends Migration
             $table->string('code');
             $table->string('name');
             $table->string('phone');
-            $table->string('external_id');
-            $table->string('checkout_link');
-            $table->integer('barcodes_id')->constrained('barcodes')->cascadeOnDelete();
+            $table->string('external_id')->nullabe();
+            $table->string('checkout_link')->nullable();
+            $table->foreignId('barcode_id')->constrained('barcodes')->cascadeOnDelete();
             $table->string('payment_method')->nullable();
             $table->string('payment_status')->nullable();
-            $table->integer('subtotal');
-            $table->integer('ppn');
-            $table->integer('total');
+            $table->decimal('subtotal', 10, 2);
+            $table->decimal('ppn', 10, 2);
+            $table->decimal('total', 10, 2);
             $table->timestamps();
         });
     }

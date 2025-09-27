@@ -9,6 +9,9 @@ use App\Filament\Resources\Transactions\Schemas\TransactionsForm;
 use App\Filament\Resources\Transactions\Tables\TransactionsTable;
 use App\Models\Transaction;
 use BackedEnum;
+use Filament\Resources\RelationManagers\RelationManager;
+use App\Filament\Resources\TransactionResource\RelationManagers\TransactionItemsRelationManager;
+use App\Models\TransactionItems;
 use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
 use Filament\Support\Icons\Heroicon;
@@ -35,7 +38,7 @@ class TransactionsResource extends Resource
     public static function getRelations(): array
     {
         return [
-            //
+            TransactionItemsRelationManager::class,
         ];
     }
 

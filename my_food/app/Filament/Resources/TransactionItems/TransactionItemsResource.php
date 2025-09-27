@@ -7,6 +7,7 @@ use App\Filament\Resources\TransactionItems\Pages\EditTransactionItems;
 use App\Filament\Resources\TransactionItems\Pages\ListTransactionItems;
 use App\Filament\Resources\TransactionItems\Schemas\TransactionItemsForm;
 use App\Filament\Resources\TransactionItems\Tables\TransactionItemsTable;
+use App\Filament\Resources\Transactions\TransactionsResource;
 use App\Models\TransactionItems;
 use BackedEnum;
 use Filament\Resources\Resource;
@@ -18,9 +19,13 @@ class TransactionItemsResource extends Resource
 {
     protected static ?string $model = TransactionItems::class;
 
-    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
+    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedQrCode;
 
     protected static ?string $recordTitleAttribute = 'Transaction Items';
+
+    public static bool $shouldRegisterNavigation = false;
+
+    public static ?string $parentResource = TransactionsResource::class;
 
     public static function form(Schema $schema): Schema
     {
@@ -34,17 +39,33 @@ class TransactionItemsResource extends Resource
 
     public static function getRelations(): array
     {
-        return [
-            //
-        ];
+        return [];
     }
 
     public static function getPages(): array
     {
         return [
             'index' => ListTransactionItems::route('/'),
-            'create' => CreateTransactionItems::route('/create'),
-            'edit' => EditTransactionItems::route('/{record}/edit'),
         ];
+    }
+
+    public static function canCreate(): bool
+    {
+        return false;
+    }
+
+    public static function canEdit($record) : bool 
+    {
+        return false;
+    }
+
+    public static function canDelete($record) : bool 
+    {
+        return false;
+    }
+
+    public static function canDeleteAny(): bool
+    {
+        return false;
     }
 }

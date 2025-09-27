@@ -18,7 +18,7 @@ class BarcodeResource extends Resource
 {
     protected static ?string $model = Barcode::class;
 
-    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
+    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedQrCode;
 
     protected static ?string $recordTitleAttribute = 'Barcode';
 

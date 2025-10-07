@@ -2,8 +2,6 @@
 
 namespace App\Filament\Resources\TransactionItems;
 
-use App\Filament\Resources\TransactionItems\Pages\CreateTransactionItems;
-use App\Filament\Resources\TransactionItems\Pages\EditTransactionItems;
 use App\Filament\Resources\TransactionItems\Pages\ListTransactionItems;
 use App\Filament\Resources\TransactionItems\Schemas\TransactionItemsForm;
 use App\Filament\Resources\TransactionItems\Tables\TransactionItemsTable;

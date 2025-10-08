@@ -1,11 +1,11 @@
 <?php
-namespace App\Filament\Resources\TransactionResource\RelationManagers\ItemsRelationManager;
+namespace App\Filament\Resources\Transactions\RelationManagers;
 
 use Filament\Schemas\Schema;
-use App\Filament\Resources\Transactions\RelationManagers\RelationManager;
+use Filament\Resources\RelationManagers\RelationManager;
 use Filament\Forms\Components\TextInput;
 use Filament\Tables\Table;
-use Filament\Resources\TransactionItemsResource\Tables\TransactionItemsTable;
+use App\Filament\Resources\TransactionItems\Tables\TransactionItemsTable;
 
 class ItemsRelationManager extends RelationManager
 {
@@ -30,14 +30,11 @@ class ItemsRelationManager extends RelationManager
             ]);
     }
 
-    public static function table(Table $table): Table
+    public function table(Table $table): Table
     {
         return TransactionItemsTable::configure($table)
                 ->headerActions([])
-                ->actions([
-                    EditAction::make()
-                    ->label('Update Quantity'),
-                ])
-                ->bulkActions([]);
+                ->recordActions([])
+                ->toolbarActions([]);
     }   
-}
+ } 

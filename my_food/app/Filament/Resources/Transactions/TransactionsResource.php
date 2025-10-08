@@ -8,7 +8,7 @@ use App\Filament\Resources\Transactions\Schemas\TransactionsForm;
 use App\Filament\Resources\Transactions\Tables\TransactionsTable;
 use App\Models\Transaction;
 use BackedEnum;
-use App\Filament\Resources\TransactionResource\RelationManagers\ItemsRelationManager;
+use App\Filament\Resources\Transactions\RelationManagers\ItemsRelationManager;
 use App\Models\TransactionItems;
 use Filament\Resources\Resource;
 use Filament\Schemas\Schema;

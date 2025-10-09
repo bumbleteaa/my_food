@@ -14,7 +14,7 @@ class TransactionSeeder extends Seeder
     {
         $barcode = Barcode::all();
         $paymentStatuses = ['pending', 'paid', 'failed'];
-        $paymentMethods = ['credit_card', 'paypal', 'bank_transfer'];
+        $paymentMethods = ['cash', 'qris', 'bank_transfer'];
 
         for ($i = 1; $i <=20; $i++) {
 

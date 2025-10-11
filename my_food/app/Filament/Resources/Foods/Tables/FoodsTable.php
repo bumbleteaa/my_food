@@ -31,7 +31,7 @@ class FoodsTable
                 ->boolean()
                 ->sortable(),
                 TextColumn::make('category.name')
-                ->searchable(),  
+                ->searchable(),
                 TextColumn::make('created_at')
                 ->dateTime()
                 ->sortable()
@@ -41,9 +41,7 @@ class FoodsTable
                 ->sortable()
                 ->toggleable(isToggledHiddenByDefault:true),
             ])
-            ->filters([
-                //
-            ])
+            ->filters([])
             ->recordActions([
                 EditAction::make(),
             ])

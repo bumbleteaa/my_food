@@ -4,9 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\Barcode;
 use App\Models\Transaction;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use SebastianBergmann\CodeCoverage\Report\Xml\Totals;
 
 class TransactionSeeder extends Seeder
 {

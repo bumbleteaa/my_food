@@ -9,6 +9,11 @@ use App\Filament\Resources\Barcodes\Schemas\BarcodeForm;
 use App\Filament\Resources\Barcodes\Tables\BarcodesTable;
 use App\Models\Barcode;
 use BackedEnum;
+use Filament\Actions\BulkAction;
+use Filament\Actions\BulkActionGroup;
+use Filament\Actions\DeleteAction;
+use Filament\Actions\DeleteBulkAction;
+use Filament\Actions\EditAction;
 use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
 use Filament\Support\Icons\Heroicon;
@@ -20,7 +25,7 @@ class BarcodeResource extends Resource
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedQrCode;
 
-    protected static ?string $recordTitleAttribute = 'Barcode';
+    protected static ?string $recordTitleAttribute = 'QR Tables';
 
     public static function form(Schema $schema): Schema
     {
@@ -30,6 +35,18 @@ class BarcodeResource extends Resource
     public static function table(Table $table): Table
     {
         return BarcodesTable::configure($table);
+
+        return $table
+            ->action([
+                EditAction::make(),
+                DeleteAction::make(),
+
+            ])
+            ->bulkAction([
+                BulkActionGroup::make([
+                    DeleteBulkAction::make(),
+                ]),
+            ]);
     }
 
     public static function getRelations(): array

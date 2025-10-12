@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('barcodes', function (Blueprint $table) {
             $table->id(); 
             $table->string('table_numbers');
-            $table->string('images');
+            $table->string('images')->nullable();
             $table->string('qr_value');
             $table->integer('user_id');
             $table->timestamps();

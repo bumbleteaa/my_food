@@ -14,7 +14,7 @@ class ListBarcodes extends ListRecords
     {
         return [
             CreateAction::make()
-                ->label('Create Barcode'),
+                ->label('New QR Table'),
         ];
     }
 }

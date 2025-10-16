@@ -9,7 +9,6 @@ use App\Filament\Resources\Barcodes\Schemas\BarcodeForm;
 use App\Filament\Resources\Barcodes\Tables\BarcodesTable;
 use App\Models\Barcode;
 use BackedEnum;
-use Filament\Actions\BulkAction;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteAction;
 use Filament\Actions\DeleteBulkAction;

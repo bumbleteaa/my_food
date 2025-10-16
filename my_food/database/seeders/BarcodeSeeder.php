@@ -50,14 +50,14 @@ class BarcodeSeeder extends Seeder
             $barcode = Barcode::create($barcodeData);
 
             //Generate QR code image
-            $filename = "{$barcode->table_numbers}.png";
+            $filename = "{$barcode->table_numbers}.svg";
             $qrCodePath = "{$directory}/{$filename}";
 
             try {
                 QrCodeHelper::saveToFile($barcode->qr_value, $qrCodePath, 400);
 
                 $barcode->update([
-                    'images' => "qrcodes/{$filename}"
+                    'images' => "qrcodes/{$barcode->table_numbers}.svg"
                 ]);
 
                 $this->command->info("Barcode for {$barcode->table_numbers} created with QR code.");
